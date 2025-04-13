@@ -20,11 +20,11 @@
 	holopara_projectile.fire()
 	return holopara_projectile
 
-/mob/living/simple_animal/hostile/holoparasite/UnarmedAttack(atom/A, proximity_flag, list/modifiers)
+/mob/living/simple_animal/hostile/holoparasite/UnarmedAttack(atom/target, proximity_flag, list/modifiers)
 	if(!is_manifested() && combat_mode)
 		to_chat(src, span_dangerbold("You must be manifested to interact with or attack things!"))
 		return
-	if(SEND_SIGNAL(src, COMSIG_HOSTILE_ATTACKINGTARGET, target) & COMPONENT_HOSTILE_NO_ATTACK)
+	if(SEND_SIGNAL(src, COMSIG_HOSTILE_PRE_ATTACKINGTARGET, target) & COMPONENT_HOSTILE_NO_ATTACK)
 		return
 	if(target == src)
 		to_chat(src, span_dangerbold("You can't attack yourself!"))
