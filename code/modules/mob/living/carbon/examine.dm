@@ -128,7 +128,7 @@
 		else if(nutrition < NUTRITION_LEVEL_STARVING)
 			. += span_warning("[t_He] look[p_s()] gaunt, and move[p_s()] like every step is an effort.")
 		else if(nutrition < NUTRITION_LEVEL_HUNGRY)
-			. += span_warning("[t_He] look[p_s()] underfed.")
+			. += span_warning("[t_He] look[p_s()] under fed.")
 		else if(nutrition < NUTRITION_LEVEL_FED)
 			. += span_notice("[t_He] look[p_s()] hungry.")
 		else if(nutrition >= NUTRITION_LEVEL_FAT)
